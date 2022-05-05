@@ -44,7 +44,7 @@ public class OrderController {
         return ResponseEntity.status(HttpStatus.OK).body(responseOrder);
     }
 
-    @PostMapping("/{userId}/orders")
+    @GetMapping("/{userId}/orders")
     public ResponseEntity<List<ResponseOrder>> getOrder(@PathVariable String userId) {
         Iterable<OrderEntity> orderList = orderService.getOrdersByUserId(userId);
         List<ResponseOrder> result = new ArrayList<>();
